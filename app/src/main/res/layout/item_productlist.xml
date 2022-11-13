@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productItemWrapper"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:id="@+id/productItemInnerWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/rounded_borders"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/pazarama_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/darkGrey"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/favorite"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/empty_heart"
+            android:orientation="vertical"></LinearLayout>
+    </LinearLayout>
+</LinearLayout>

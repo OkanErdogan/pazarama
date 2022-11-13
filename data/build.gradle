@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    def loginPropsFile = file("../login.properties")
+    if(loginPropsFile.canRead()){
+        def Properties loginProps = new Properties()
+        loginProps.load(new FileInputStream(loginPropsFile))
+
+        if(loginProps['TOKEN'] != null){
+            project.ext.set("token",loginProps['TOKEN'])
+        }else{
+            project.ext.set("token","")
+        }
+
+        if(loginProps['PASSKEY'] != null){
+            project.ext.set("passkey",loginProps['PASSKEY'])
+        }else{
+            project.ext.set("passkey","")
+        }
+    }else{
+        println("login.properties file can't found. Please add login.properties file under project folder and define TOKEN's value")
+        project.ext.set("token","")
+        project.ext.set("passkey","")
+    }
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        resValue "string","token","${project.token}"
+        resValue "string","passkey","${project.passkey}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

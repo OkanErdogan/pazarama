@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.okan.ecommerce">
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/pazarama_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/pazarama_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ecommerce"
+        tools:targetApi="31">
+        <activity
+            android:name="com.okan.ecommerce.ui.login.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.okan.ecommerce.ui.productlist.ProductListActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.okan.ecommerce.ui.detail.ProductItemDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.okan.ecommerce.ui.favorites.FavoritesActivity"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

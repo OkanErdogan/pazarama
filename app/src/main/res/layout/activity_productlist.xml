@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/round_rect_white"
+    android:padding="10dp">
+
+    <include
+        android:id="@+id/headerWrapper"
+        layout="@layout/header_wrapper" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/search_hint_text"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/round_rect_white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/emptyViewText"
+            android:textColor="@color/darkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/pazarama_icon"></ImageView>
+    </RelativeLayout>
+
+</LinearLayout>

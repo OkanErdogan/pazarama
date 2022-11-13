@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pazarama</string>
+    <string name="login_button_text">Oturum Aç</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="password">Şifre</string>
+    <string name="search_hint_text">"Aramak istediğiniz ürünün adını yazınız."</string>
+    <string name="exit_message">Oturumunuz sonlanacaktır. Devam etmek istiyor musunuz?</string>
+    <string name="yes">"Evet"</string>
+    <string name="no">"Hayır"</string>
+    <string name="favorite">"Favoriler"</string>
+    <string name="emptyViewText">"Malesef hiçbir ürün bulunamadı."</string>
+</resources>
