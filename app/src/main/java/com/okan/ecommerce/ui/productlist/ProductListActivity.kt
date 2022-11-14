@@ -103,11 +103,9 @@ class ProductListActivity : BaseActivity<ProductListViewModel>() {
     private fun isEmpty(isEmpty : Boolean){
         if (isEmpty) {
             productListRecyclerView.visibility = View.GONE
-            searchEditText.visibility = View.GONE
             emptyView.visibility = View.VISIBLE
         } else {
             productListRecyclerView.visibility = View.VISIBLE
-            searchEditText.visibility = View.VISIBLE
             emptyView.visibility = View.GONE
         }
     }
