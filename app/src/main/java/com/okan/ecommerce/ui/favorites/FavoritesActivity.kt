@@ -82,11 +82,9 @@ class FavoritesActivity : BaseActivity<FavoritesViewModel>() {
     private fun isEmpty(isEmpty : Boolean){
         if (isEmpty) {
             favoritesRecyclerView.visibility = View.GONE
-            searchEditText.visibility = View.GONE
             emptyView.visibility = View.VISIBLE
         } else {
             favoritesRecyclerView.visibility = View.VISIBLE
-            searchEditText.visibility = View.VISIBLE
             emptyView.visibility = View.GONE
         }
     }
